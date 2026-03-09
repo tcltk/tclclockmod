@@ -72,7 +72,7 @@ jobs:
         run: |
           echo $TZ; timedatectl status
           # tclsh ../../tests/all.tcl
-          make test
+          make test TESTFLAGS='-constraints clock-no-tzdata'
 
       - name: Install ${{ matrix.compiler }}
         working-directory: ./unix/build-${{ matrix.compiler }}
