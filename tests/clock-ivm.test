@@ -6,3 +6,4 @@
 
 clock configure -valid [expr {![clock configure -valid]}]
 source [file join [file dirname [info script]] clock.test]
+clock configure -valid [expr {![clock configure -valid]}]; # ensure switched back (e. g. for possible -singleproc invocation)
